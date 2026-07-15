@@ -30,7 +30,7 @@ pipeline {
             steps {
                 dir('astrology_agent') {
                     bat '''
-                        python -m venv venv
+                        py -m venv venv
                         call venv\\Scripts\\python.exe -m pip install --upgrade pip
                         call venv\\Scripts\\pip.exe install -r requirements.txt
                     '''
