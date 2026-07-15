@@ -8,7 +8,7 @@
 //   4. Installs frontend dependencies and builds the React app
 //
 // In Jenkins: New Item -> Pipeline -> Pipeline script from SCM -> point at
-// this repo -> Script Path: Jenkinsfile
+// this repo -> Script Path: Jenkinsfile file
 
 pipeline {
     agent any
