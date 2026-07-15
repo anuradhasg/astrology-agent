@@ -1,0 +1,71 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --sky:      #0B0B1F;   /* deep space background */
+  --cloud:    #161233;   /* panel / bubble background */
+  --mist:     #241D4A;   /* soft badge background */
+  --horizon:  #322A5E;   /* border color */
+  --breeze:   #8B5CF6;   /* violet accent (pulse dot, secondary) */
+  --deep:     #D4AF37;   /* gold — primary accent (was blue in weather theme) */
+  --ink:      #EDEBFA;   /* primary text */
+  --dusk:     #A79FC7;   /* muted text */
+  --fog:      #7A7296;   /* faintest text */
+  --sun:      #E8CC7A;   /* soft gold, for gradients */
+  --coral:    #FF7355;   /* error/warning */
+  --white:    #FFFFFF;
+  --radius:   16px;
+  --shadow:   0 4px 24px rgba(139, 92, 246, 0.10);
+  --shadow-lg: 0 8px 40px rgba(139, 92, 246, 0.16);
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--sky);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--horizon); border-radius: 4px; }
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(100vw + 320px)); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50%       { opacity: 0.9; }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.45; }
+  30%            { transform: translateY(-7px); opacity: 1; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; }
+}
